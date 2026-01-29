@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Galerie d’images</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>📷 Galerie d’images</h1>
+  <p>Recherche par métadonnées (tags, auteur, lieu)</p>
+</header>
+
+<main>
+  <div class="top-bar">
+    <input
+      type="text"
+      id="search"
+      placeholder="🔍 Rechercher une image..."
+    >
+    <button id="openFilter">➕ Filtrer</button>
+    <select id="sortBy">
+        <option value="id">ID</option>
+        <option value="titre">Titre</option>
+        <option value="date">Date</option>
+    </select>
+    <button id="sortOrder" data-order="asc">⬇</button>
+  </div>
+
+  <section id="gallery"></section>
+  
+  <div id="pagination" class="pagination"></div> <!-- PAGINATION -->
+
+  <div id="activeFilters" class="active-filters">
+    <span id="activeFiltersText">Aucun filtre actif</span>
+    <button id="saveFavorite" title="Ajouter aux favoris">☆</button>
+  </div>
+
+  <button id="toggleView" class="floating-toggle">📄</button> <!-- AFFICHAGE GALLERIE -->
+</main>
+
+<!-- MODAL FILTRES -->
+<div id="filterModal" class="modal">
+  <div class="modal-content">
+    <div class="filter-header">
+        <h2>Filtrer les images</h2>
+        <div class="filter-mode">
+            <button type="button" id="toggleMode" class="mode-on">ET</button>
+        </div>
+    </div>
+
+    <form id="filterForm">
+      <input type="text" id="filterTags" placeholder="Tags (ex: chat, animal)">
+      <input type="text" id="filterAuteur" placeholder="Auteur">
+      <input type="text" id="filterDate" placeholder="Date">
+      <input type="text" id="filterLieu" placeholder="Lieu">
+      <input type="text" id="filterTitre" placeholder="Titre">
+      <input type="text" id="filterDescription" placeholder="Description">
+      <input type="text" id="filterSupport" placeholder="Support">
+      <input type="text" id="filterType" placeholder="Type">
+      <div class="dimension-group">
+        <input type="number" id="filterLargeur" placeholder="Largeur">
+        <input type="number" id="filterHauteur" placeholder="Hauteur">
+      </div>
+      <div class="date-picker-wrapper">
+         <input type="text" id="filterDateE" placeholder="Date d'entrée">
+         <button type="button" id="calendarBtn">📅</button>
+      </div>
+      <!--<input type="text" id="filterDateE" placeholder="Date d'entrée">-->
+      <input type="text" id="filterEtat" placeholder="Etat">
+      <input type="text" id="filterProprietaire" placeholder="Proprietaire">
+      <input type="text" id="filterCollection" placeholder="Collection">
+      <input type="text" id="filterStockage" placeholder="Stockage">
+      <input type="text" id="filterDiffusion" placeholder="Diffusion">
+
+      <div class="form-actions">
+        <button type="submit">Appliquer</button>
+        <button type="button" id="resetFilter">Reset</button>
+        <button type="button" id="closeFilter" class="secondary">Annuler</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+
+<!-- MODAL PREVIEW FULL -->
+<div id="previewModal" class="modal">
+  <div class="modal-content preview-content">
+    <button id="closePreview" class="close-btn">✕</button>
+
+    <div class="preview-image">
+      <img id="previewImg" src="" alt="Image">
+    </div>
+
+    <div class="preview-actions">
+        <button id="openStereo">👁️ Visualisation</button>
+    </div>
+
+    <div class="preview-info" id="previewInfo">
+      <!-- Les infos seront injectées ici -->
+    </div>
+  </div>
+</div>
+
+
+<!-- MODAL STEREO 3D -->
+<div id="stereoModal" class="stereo-modal">
+  <img id="stereoImg" src="" alt="Image stéréoscopique">
+</div>
+
+
+<!-- SIDE BARRE -->
+<!-- Bouton burger -->
+<button id="burgerBtn" class="burger">
+  ☰
+</button>
+
+<!-- Overlay -->
+<div id="overlay" class="overlay"></div>
+
+<!-- Sidebar -->
+<aside id="sidebar" class="sidebar">
+  <h2>Favoris</h2>
+  <nav class="sidebar-menu">
+    <!--<a href="#" id="toggleFavoritesImg">Images ▾</a>-->
+    <a href="#" id="toggleFavorites">Filtres ▾</a>
+  </nav>
+  <div class="sidebar-favorites">
+    <div id="favoritesWrapper" class="favorites-wrapper">
+        <nav id="favoritesList"></nav>
+    </div>
+  </div>
+</aside>
+
+
+
+<script src="script.js"></script>
+</body>
+</html>
