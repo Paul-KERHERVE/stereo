@@ -8,6 +8,10 @@
 <body>
 
 <header>
+  <!-- Bouton burger -->
+  <button id="burgerBtn" class="burger">
+    ☰
+  </button>
   <h1>📷 Galerie d’images</h1>
   <p>Recherche par métadonnées (tags, auteur, lieu)</p>
 </header>
@@ -23,7 +27,7 @@
     <select id="sortBy">
         <option value="id">ID</option>
         <option value="titre">Titre</option>
-        <option value="date">Date</option>
+        <option value="date">Année</option>
     </select>
     <button id="sortOrder" data-order="asc">⬇</button>
   </div>
@@ -51,28 +55,76 @@
     </div>
 
     <form id="filterForm">
-      <input type="text" id="filterTags" placeholder="Tags (ex: chat, animal)">
+      <div class="date-picker-wrapper">
+        <input type="text" id="filterTags" placeholder="Tags (ex: chat, animal)">
+        <button type="button" id="tagsBtn">▼</button>
+        <ul id="tagsMenu" class="dropdown">
+            <li data-value="tirage">tirage</li>
+        </ul>
+      </div>
+
       <input type="text" id="filterAuteur" placeholder="Auteur">
-      <input type="text" id="filterDate" placeholder="Date">
+      <input type="text" id="filterDate" placeholder="Année">
       <input type="text" id="filterLieu" placeholder="Lieu">
       <input type="text" id="filterTitre" placeholder="Titre">
-      <input type="text" id="filterDescription" placeholder="Description">
-      <input type="text" id="filterSupport" placeholder="Support">
-      <input type="text" id="filterType" placeholder="Type">
-      <div class="dimension-group">
-        <input type="number" id="filterLargeur" placeholder="Largeur">
-        <input type="number" id="filterHauteur" placeholder="Hauteur">
+
+      <div class="date-picker-wrapper">
+        <input type="text" id="filterDescription" placeholder="Description">
+        <button type="button" id="descriptionBtn">📄</button>
       </div>
+
+      <div class="date-picker-wrapper">
+        <input type="text" id="filterSupport" placeholder="Support Physique">
+        <button type="button" id="supportBtn">▼</button>
+        <ul id="supportMenu" class="dropdown">
+            <li data-value="plaque de verre">plaque de verre</li>
+            <li data-value="film">film</li>
+            <li data-value="tirage">tirage</li>
+        </ul>
+      </div>
+
+      <div class="date-picker-wrapper">
+        <input type="text" id="filterType" placeholder="Type de Stereo">
+        <button type="button" id="typeBtn">▼</button>
+        <ul id="typeMenu" class="dropdown">
+            <li data-value="anaglyphe">anaglyphe</li>
+            <li data-value="side by side">side by side</li>
+        </ul>
+      </div>
+
+      <div class="dimension-group">
+        <input type="number" id="filterLargeur" placeholder="Largeur (cm)" min="0">
+        <input type="number" id="filterHauteur" placeholder="Hauteur (cm)" min="0">
+      </div>
+
       <div class="date-picker-wrapper">
          <input type="text" id="filterDateE" placeholder="Date d'entrée">
          <button type="button" id="calendarBtn">📅</button>
       </div>
-      <!--<input type="text" id="filterDateE" placeholder="Date d'entrée">-->
-      <input type="text" id="filterEtat" placeholder="Etat">
+      
+      <div class="date-picker-wrapper">
+        <input type="text" id="filterEtat" placeholder="État de Conservation">
+        <button type="button" id="etatBtn">▼</button>
+        <ul id="etatMenu" class="dropdown">
+            <li data-value="correct">correct</li>
+            <li data-value="abimé">abimé</li>
+            <li data-value="effacé">effacé</li>
+        </ul>
+      </div>
+
+
       <input type="text" id="filterProprietaire" placeholder="Proprietaire">
       <input type="text" id="filterCollection" placeholder="Collection">
-      <input type="text" id="filterStockage" placeholder="Stockage">
-      <input type="text" id="filterDiffusion" placeholder="Diffusion">
+      <input type="text" id="filterStockage" placeholder="Lieu de Stockage">
+
+      <div class="date-picker-wrapper">
+        <input type="text" id="filterDiffusion" placeholder="Diffusion">
+        <button type="button" id="diffusionBtn">▼</button>
+        <ul id="diffusionMenu" class="dropdown">
+            <li data-value="interne">interne</li>
+            <li data-value="externe">externe</li>
+        </ul>
+      </div>
 
       <div class="form-actions">
         <button type="submit">Appliquer</button>
@@ -109,13 +161,26 @@
   <img id="stereoImg" src="" alt="Image stéréoscopique">
 </div>
 
+<!-- MODAL DESCRIPTION -->
+<div id="descriptionModal" class="modal">
+  <div class="modal-content description-modal">
+    <h3>Description</h3>
+
+    <textarea
+      id="descriptionTextarea"
+      placeholder="Saisir une description…"
+      rows="8"
+    ></textarea>
+
+    <div class="form-actions">
+      <button type="button" id="saveDescription">Valider</button>
+      <button type="button" id="closeDescription" class="secondary">Annuler</button>
+    </div>
+  </div>
+</div>
+
 
 <!-- SIDE BARRE -->
-<!-- Bouton burger -->
-<button id="burgerBtn" class="burger">
-  ☰
-</button>
-
 <!-- Overlay -->
 <div id="overlay" class="overlay"></div>
 

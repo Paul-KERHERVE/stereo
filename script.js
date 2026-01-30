@@ -133,7 +133,7 @@ document.getElementById("toggleView").addEventListener("click", () => {
   viewMode = viewMode === "grid" ? "list" : "grid";
 
   // Pagination différente selon le mode
-  imagesPerPage = viewMode === "grid" ? 20 : 50;
+  imagesPerPage = viewMode === "grid" ? 20 : 60;
 
   currentPage = 1;
 
@@ -170,8 +170,9 @@ function displayImages(images) {
     } else {
       item.className = "image-row";
       item.innerHTML = `
-        <strong>${img.titre}</strong>
-        <span> — ${img.auteur} (${img.date})</span>
+        <strong>${img.titre}</strong><br>
+        
+        <span>${img.tags.join(", ")}</span>
       `;
     }
 
@@ -220,15 +221,15 @@ function openPreview(img) {
     <div class="group">
       <h3>Historique</h3>
       <div class="row"><span>Auteur</span><span>${img.auteur}</span></div>
-      <div class="row"><span>Date</span><span>${img.date}</span></div>
+      <div class="row"><span>Année</span><span>${img.date}</span></div>
     </div>
 
     <div class="group">
       <h3>Technique</h3>
-      <div class="row"><span>Support</span><span>${img.support}</span></div>
-      <div class="row"><span>Format</span><span>${img.format}</span></div>
-      <div class="row"><span>Largeur</span><span>${img.largeur}</span></div>
-      <div class="row"><span>Hauteur</span><span>${img.hauteur}</span></div>
+      <div class="row"><span>Support Physique</span><span>${img.support}</span></div>
+      <div class="row"><span>Format Numérique</span><span>${img.format}</span></div>
+      <div class="row"><span>Largeur (cm)</span><span>${img.largeur}</span></div>
+      <div class="row"><span>Hauteur (cm)</span><span>${img.hauteur}</span></div>
     </div>
 
     <div class="group">
@@ -236,8 +237,10 @@ function openPreview(img) {
       <div class="row"><span>Date d'entrée</span><span>${img.date_entree}</span></div>
       <div class="row"><span>État de Conservation</span><span>${img.etat}</span></div>
       <div class="row"><span>Propriétaire</span><span>${img.proprietaire}</span></div>
+      <div class="row"><span>Provenance</span><span>${img.provenance}</span></div>
       <div class="row"><span>Collection</span><span>${img.collection}</span></div>
       <div class="row"><span>Lieu de Stockage</span><span>${img.stockage}</span></div>
+      <div class="row"><span>Emplacement</span><span>${img.emplacement}</span></div>
       <div class="row"><span>Diffusion</span><span>${img.diffusion}</span></div>
     </div>
   `;
@@ -309,8 +312,10 @@ function applyAll() {
       img.date_entree.toLowerCase().includes(query) ||
       img.etat.toLowerCase().includes(query) ||
       img.proprietaire.toLowerCase().includes(query) ||
+      img.provenance.toLowerCase().includes(query) ||
       img.collection.toLowerCase().includes(query) ||
       img.stockage.toLowerCase().includes(query)||
+      img.emplacement.toLowerCase().includes(query) ||
       img.diffusion.toLowerCase().includes(query)
       
     );
@@ -339,61 +344,79 @@ function applyFilters(images) {
         .filter(Boolean);
 
       // On demande que toutes les tags existent dans l'image (ET)
-      const hasAllTags = tagsToCheck.every(tag =>
+      /*const hasAllTags = tagsToCheck.every(tag =>
         img.tags.some(t => t.toLowerCase() === tag)
       );
 
       if (!hasAllTags) return false;
+    }*/
+    let tagsMatch;
+      if (filterMode === "ET") {
+        tagsMatch = tagsToCheck.every(tag =>
+          img.tags.some(t => t.toLowerCase() === tag)
+        );
+      } else {
+        tagsMatch = tagsToCheck.some(tag =>
+          img.tags.some(t => t.toLowerCase() === tag)
+        );
+      }
+      checks.push(tagsMatch);
     }
 
     // Auteur
     if (currentFilters.auteur) {
-      if (!img.auteur.toLowerCase().includes(currentFilters.auteur.toLowerCase()))
-        return false;
+        checks.push(img.auteur.toLowerCase().includes(currentFilters.auteur.toLowerCase()));
+        /*if (!img.auteur.toLowerCase().includes(currentFilters.auteur.toLowerCase()))
+            return false;*/
     }
 
     // Date
     if (currentFilters.date) {
         checks.push(img.date.toLowerCase().includes(currentFilters.date.toLowerCase()));
-      /*if (!img.date.toLowerCase().includes(currentFilters.date.toLowerCase()))
-        return false;*/
+        /*if (!img.date.toLowerCase().includes(currentFilters.date.toLowerCase()))
+            return false;*/
     }
 
     // Lieu
     if (currentFilters.lieu) {
         checks.push(img.lieu.toLowerCase().includes(currentFilters.lieu.toLowerCase()));
-      /*if (!img.lieu.toLowerCase().includes(currentFilters.lieu.toLowerCase()))
-        return false;*/
+        /*if (!img.lieu.toLowerCase().includes(currentFilters.lieu.toLowerCase()))
+            return false;*/
     }
 
     // Titre
     if (currentFilters.titre) {
-      if (!img.titre.toLowerCase().includes(currentFilters.titre.toLowerCase()))
-        return false;
+        checks.push(img.titre.toLowerCase().includes(currentFilters.titre.toLowerCase()));
+        /*if (!img.titre.toLowerCase().includes(currentFilters.titre.toLowerCase()))
+            return false;*/
     }
 
     // Description
     if (currentFilters.description) {
-      if (!img.description.toLowerCase().includes(currentFilters.description.toLowerCase()))
-        return false;
+        checks.push(img.description.toLowerCase().includes(currentFilters.description.toLowerCase()));
+        /*if (!img.description.toLowerCase().includes(currentFilters.description.toLowerCase()))
+            return false;*/
     }
 
     // Support
     if (currentFilters.support) {
-      if (!img.support.toLowerCase().includes(currentFilters.support.toLowerCase()))
-        return false;
+        checks.push(img.support.toLowerCase().includes(currentFilters.support.toLowerCase()));
+        /*if (!img.support.toLowerCase().includes(currentFilters.support.toLowerCase()))
+            return false;*/
     }
 
     // Type
     if (currentFilters.type) {
-      if (!img.type.toLowerCase().includes(currentFilters.type.toLowerCase()))
-        return false;
+        checks.push(img.type.toLowerCase().includes(currentFilters.type.toLowerCase()));
+        /*if (!img.type.toLowerCase().includes(currentFilters.type.toLowerCase()))
+            return false;*/
     }
 
     // Largeur
     if (currentFilters.largeur) {
-        if (!String(img.largeur).includes(currentFilters.largeur))
-            return false;
+        checks.push(String(img.largeur).includes(currentFilters.largeur));
+        /*if (!String(img.largeur).includes(currentFilters.largeur))
+            return false;*/
     }
 
     /*if (currentFilters.largeur) {
@@ -403,45 +426,51 @@ function applyFilters(images) {
 
     // Hauteur
     if (currentFilters.hauteur) {
-        if (!String(img.hauteur).includes(currentFilters.hauteur))
-            return false;
+        checks.push(String(img.hauteur).includes(currentFilters.hauteur));
+        /*if (!String(img.hauteur).includes(currentFilters.hauteur))
+            return false;*/
     }
 
     // DateE
     if (currentFilters.date_entree) {
-      if (!img.date_entree.toLowerCase().includes(currentFilters.date_entree.toLowerCase()))
-        return false;
+        checks.push(img.date_entree.toLowerCase().includes(currentFilters.date_entree.toLowerCase()));
+        /*if (!img.date_entree.toLowerCase().includes(currentFilters.date_entree.toLowerCase()))
+            return false;*/
     }
 
     // Etat
     if (currentFilters.etat) {
-      if (!img.etat.toLowerCase().includes(currentFilters.etat.toLowerCase()))
-        return false;
+        checks.push(img.etat.toLowerCase().includes(currentFilters.etat.toLowerCase()));
+        /*if (!img.etat.toLowerCase().includes(currentFilters.etat.toLowerCase()))
+            return false;*/
     }
 
     // Proprietaire
     if (currentFilters.proprietaire) {
-      if (!img.proprietaire.toLowerCase().includes(currentFilters.proprietaire.toLowerCase()))
-        return false;
+        checks.push(img.proprietaire.toLowerCase().includes(currentFilters.proprietaire.toLowerCase()));
+        /*if (!img.proprietaire.toLowerCase().includes(currentFilters.proprietaire.toLowerCase()))
+            return false;*/
     }
 
     // Collection
     if (currentFilters.collection) {
         checks.push(img.collection.toLowerCase().includes(currentFilters.collection.toLowerCase()));
-      /*if (!img.collection.toLowerCase().includes(currentFilters.collection.toLowerCase()))
-        return false;*/
+        /*if (!img.collection.toLowerCase().includes(currentFilters.collection.toLowerCase()))
+            return false;*/
     }
 
-    // Stockage
+    // Lieu de Stockage
     if (currentFilters.stockage) {
-      if (!img.stockage.toLowerCase().includes(currentFilters.stockage.toLowerCase()))
-        return false;
+        checks.push(img.stockage.toLowerCase().includes(currentFilters.stockage.toLowerCase()));
+        /*if (!img.stockage.toLowerCase().includes(currentFilters.stockage.toLowerCase()))
+            return false;*/
     }
 
     // Diffusion
     if (currentFilters.diffusion) {
-      if (!img.diffusion.toLowerCase().includes(currentFilters.diffusion.toLowerCase()))
-        return false;
+        checks.push(img.diffusion.toLowerCase().includes(currentFilters.diffusion.toLowerCase()));
+        /*if (!img.diffusion.toLowerCase().includes(currentFilters.diffusion.toLowerCase()))
+            return false;*/
     }
 
     //return true;
@@ -477,6 +506,20 @@ function resetFilters() {
   filterMode = "ET";
   toggleBtn.textContent = "ET";
   toggleBtn.className = "mode-on";
+
+  //Liste tags
+  tags = [];
+  renderTagsDropdown();
+  tagsInput.value = ""; //couleur dropdown
+  updateTagsBtnState();
+}
+
+function updateTagsBtnState() {
+  if (tags.length === 0) {
+    tagsBtn.classList.add("empty");
+  } else {
+    tagsBtn.classList.remove("empty");
+  }
 }
 
 
@@ -484,7 +527,31 @@ document.getElementById("filterForm").addEventListener("submit", (e) => {
   e.preventDefault();
 
   // On récupère les valeurs du formulaire
-  currentFilters.tags = document.getElementById("filterTags").value.trim();
+  // 1️⃣ Récupérer la valeur du champ actuel, s'il n'est pas vide
+  const inputTag = tagsInput.value.trim();
+  let allTags = [...tags]; // tous les tags du dropdown
+
+  if (inputTag) {
+    // Séparer par virgule au cas où l'utilisateur a mis plusieurs tags
+    const inputTagsArray = inputTag.split(",").map(t => t.trim()).filter(Boolean);
+
+    // Ajouter ceux du champ à la liste, en évitant les doublons
+    inputTagsArray.forEach(t => {
+      if (!allTags.includes(t)) allTags.push(t);
+    });
+  }
+
+  // Mettre à jour le tableau tags (pour que le dropdown reste à jour)
+  tags = [...allTags];
+  renderTagsDropdown();
+
+  // Mettre à jour currentFilters.tags
+  currentFilters.tags = allTags.join(",");
+
+  // Vider le champ après fusion
+  tagsInput.value = "";
+  //currentFilters.tags = document.getElementById("filterTags").value.trim();
+  //currentFilters.tags = tags.join(",");
   currentFilters.auteur = document.getElementById("filterAuteur").value.trim();
   currentFilters.date = document.getElementById("filterDate").value.trim();
   currentFilters.lieu = document.getElementById("filterLieu").value.trim();
@@ -515,11 +582,27 @@ function updateActiveFilters() {
   let searchPart = "";
 
   // 🎛️ Filtres du modal (ET / OU)
-  Object.entries(currentFilters).forEach(([key, value]) => {
+  /*Object.entries(currentFilters).forEach(([key, value]) => {
     if (value) {
       filterParts.push(`${key} = ${value}`);
     }
-  });
+  });*/
+  Object.entries(currentFilters).forEach(([key, value]) => {
+  if (!value) return;
+
+  if (key === "tags") {
+    // Découper les tags
+    const tagsArray = value.split(",").map(t => t.trim()).filter(Boolean);
+    if (tagsArray.length === 0) return;
+
+    // Construire une chaîne selon le mode ET/OU
+    const joinedTags = tagsArray.join(` ${filterMode} `);
+    filterParts.push(`tags : ${joinedTags}`);
+  } else {
+    filterParts.push(`${key} = ${value}`);
+  }
+});
+
 
   // 🔍 Recherche (TOUJOURS ET)
   const searchValue = document.getElementById("search").value.trim();
@@ -568,8 +651,249 @@ function updateActiveFilters() {
 }
 
 
+//Choix ETAT
+const etatInput = document.getElementById("filterEtat");
+const etatBtn = document.getElementById("etatBtn");
+const etatMenu = document.getElementById("etatMenu");
+
+// Ouvrir / fermer le menu
+etatBtn.addEventListener("click", () => {
+  etatMenu.style.display =
+    etatMenu.style.display === "block" ? "none" : "block";
+});
+
+// Choix d’un état
+etatMenu.addEventListener("click", (e) => {
+  if (e.target.tagName !== "LI") return;
+
+  const value = e.target.dataset.value;
+  etatInput.value = e.target.textContent;
+
+  currentFilters.etat = value;
+  etatMenu.style.display = "none";
+});
+
+// Fermer si clic ailleurs
+document.addEventListener("click", (e) => {
+  if (!etatBtn.contains(e.target) && !etatMenu.contains(e.target)) {
+    etatMenu.style.display = "none";
+  }
+});
+
+//Choix SUPPORT
+const supportInput = document.getElementById("filterSupport");
+const supportBtn = document.getElementById("supportBtn");
+const supportMenu = document.getElementById("supportMenu");
+
+// Ouvrir / fermer le menu
+supportBtn.addEventListener("click", () => {
+  supportMenu.style.display =
+    supportMenu.style.display === "block" ? "none" : "block";
+});
+
+// Choix d’un support
+supportMenu.addEventListener("click", (e) => {
+  if (e.target.tagName !== "LI") return;
+
+  const value = e.target.dataset.value;
+  supportInput.value = e.target.textContent;
+
+  currentFilters.support = value;
+  supportMenu.style.display = "none";
+});
+
+// Fermer si clic ailleurs
+document.addEventListener("click", (e) => {
+  if (!supportBtn.contains(e.target) && !supportMenu.contains(e.target)) {
+    supportMenu.style.display = "none";
+  }
+});
+
+//Choix TYPE STEREO
+const typeInput = document.getElementById("filterType");
+const typeBtn = document.getElementById("typeBtn");
+const typeMenu = document.getElementById("typeMenu");
+
+// Ouvrir / fermer le menu
+typeBtn.addEventListener("click", () => {
+  typeMenu.style.display =
+    typeMenu.style.display === "block" ? "none" : "block";
+});
+
+// Choix d’un type
+typeMenu.addEventListener("click", (e) => {
+  if (e.target.tagName !== "LI") return;
+
+  const value = e.target.dataset.value;
+  typeInput.value = e.target.textContent;
+
+  currentFilters.type = value;
+  typeMenu.style.display = "none";
+});
+
+// Fermer si clic ailleurs
+document.addEventListener("click", (e) => {
+  if (!typeBtn.contains(e.target) && !typeMenu.contains(e.target)) {
+    typeMenu.style.display = "none";
+  }
+});
+
+//Choix DIFFUSION
+const diffusionInput = document.getElementById("filterDiffusion");
+const diffusionBtn = document.getElementById("diffusionBtn");
+const diffusionMenu = document.getElementById("diffusionMenu");
+
+// Ouvrir / fermer le menu
+diffusionBtn.addEventListener("click", () => {
+  diffusionMenu.style.display =
+    diffusionMenu.style.display === "block" ? "none" : "block";
+});
+
+// Choix d’un état
+diffusionMenu.addEventListener("click", (e) => {
+  if (e.target.tagName !== "LI") return;
+
+  const value = e.target.dataset.value;
+  diffusionInput.value = e.target.textContent;
+
+  currentFilters.diffusion = value;
+  diffusionMenu.style.display = "none";
+});
+
+// Fermer si clic ailleurs
+document.addEventListener("click", (e) => {
+  if (!diffusionBtn.contains(e.target) && !diffusionMenu.contains(e.target)) {
+    diffusionMenu.style.display = "none";
+  }
+});
+//------------------------------------------------------
 
 
+// --- Gestion des tags + dropdown ---
+const tagsInput = document.getElementById("filterTags");
+const tagsBtn = document.getElementById("tagsBtn");
+const tagsMenu = document.getElementById("tagsMenu");
+
+let tags = [];
+
+// Mettre à jour currentFilters
+function updateTagsFilter() {
+  currentFilters.tags = tags.join(",");
+}
+
+// Mettre à jour le dropdown
+function renderTagsDropdown() {
+  tagsMenu.innerHTML = "";
+
+  if (tags.length === 0) {
+    tagsMenu.style.display = "none";
+    updateTagsBtnState();
+    return;
+  }
+
+  tags.forEach((tag, index) => {
+    const li = document.createElement("li");
+
+    // Créer le texte du tag + bouton supprimer
+    li.innerHTML = `
+      <span>${tag}</span>
+      <button type="button" class="remove-tag" data-index="${index}">✕</button>
+    `;
+
+    // Clic sur le texte du tag : remettre dans l'input
+    li.querySelector("span").addEventListener("click", () => {
+      tagsInput.value = tag;
+      tagsMenu.style.display = "none";
+      tagsInput.focus();
+    });
+
+    // Clic sur la croix : supprimer le tag
+    li.querySelector(".remove-tag").addEventListener("click", (e) => {
+      e.stopPropagation(); // éviter que le clic sur li soit déclenché
+      tags.splice(index, 1); // retirer du tableau
+      updateTagsFilter();
+      renderTagsDropdown(); // rafraîchir le dropdown
+    });
+
+    tagsMenu.appendChild(li);
+  });
+
+  updateTagsBtnState();
+}
+
+
+// Ajouter un tag quand on tape "," ou "Entrée"
+tagsInput.addEventListener("keydown", (e) => {
+  if (e.key === "Enter" || e.key === ",") {
+    e.preventDefault();
+    const inputTag = tagsInput.value.trim();
+    if (inputTag && !tags.includes(inputTag)) {
+      tags.push(inputTag);
+      updateTagsFilter();
+      renderTagsDropdown();
+    }
+    tagsInput.value = "";
+  }
+});
+
+// Bouton dropdown
+tagsBtn.addEventListener("click", () => {
+  if (tagsMenu.style.display === "block") {
+    tagsMenu.style.display = "none";
+  } else {
+    renderTagsDropdown();
+    tagsMenu.style.display = "block";
+  }
+});
+
+// Fermer dropdown si clic ailleurs
+document.addEventListener("click", (e) => {
+  if (!tagsBtn.contains(e.target) && !tagsInput.contains(e.target) && !tagsMenu.contains(e.target)) {
+    tagsMenu.style.display = "none";
+  }
+});
+
+
+//------------------------------------------------------------------
+//Modal Champs Description
+const descriptionBtn = document.getElementById("descriptionBtn");
+const descriptionModal = document.getElementById("descriptionModal");
+const descriptionInput = document.getElementById("filterDescription");
+const descriptionTextarea = document.getElementById("descriptionTextarea");
+
+// Ouvrir le modal
+descriptionBtn.addEventListener("click", () => {
+  descriptionTextarea.value = descriptionInput.value; // synchro
+  descriptionModal.style.display = "flex";
+  descriptionTextarea.focus();
+});
+
+// Valider
+document.getElementById("saveDescription").addEventListener("click", () => {
+  descriptionInput.value = descriptionTextarea.value.trim();
+  descriptionModal.style.display = "none";
+});
+
+// Annuler
+document.getElementById("closeDescription").addEventListener("click", () => {
+  descriptionModal.style.display = "none";
+});
+
+// Fermer avec ESC
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") {
+    descriptionModal.style.display = "none";
+  }
+});
+//------------------------------------------------------------------
+
+
+
+//Boutn gris de base pour le dropdown des tags
+updateTagsBtnState();
+
+
+//--------------------------------------------------------------------
 //PAGINATION : 
 function renderPagination(totalImages) {
   const pagination = document.getElementById("pagination");

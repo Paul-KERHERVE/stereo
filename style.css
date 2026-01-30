@@ -357,6 +357,7 @@ button.secondary:hover {
 
 /*Calendrier*/
 .date-picker-wrapper {
+  position: relative;
   display: flex;
   align-items: flex-start; 
   gap: 5px;
@@ -463,7 +464,7 @@ button.secondary:hover {
 /*SIDE BARRE*/
 /* Bouton burger */
 .burger {
-  position: fixed;
+  position: absolute;
   font-size: 36px !important;
   top: 30px;
   left: 15px;
@@ -716,4 +717,120 @@ button.secondary:hover {
 #toggleFavorites {
   cursor: pointer;
   user-select: none;
+}
+
+
+/*Choix etat*/
+
+.select-input {
+  position: relative;
+  display: flex;
+
+  gap: 5px;
+  align-items: flex-start; 
+}
+
+.select-input input {
+  flex: 1;
+  padding-right: 10px;
+}
+
+.select-input button {
+  position: absolute;
+  right: 0;
+  height: 100%;
+  width: 10px;
+  border: none;
+  background: #eee;
+  cursor: pointer;
+}
+
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: white;
+  border: 1px solid #ccc;
+  list-style: none;
+  margin: 2px 0 0;
+  padding: 0;
+  display: none;
+  z-index: 1000;
+}
+
+.dropdown li {
+  padding: 8px;
+  cursor: pointer;
+}
+
+.dropdown li:hover {
+  background: #f0f0f0;
+}
+
+
+/*multi tags*/
+/*
+.tags-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  border: 1px solid #ccc;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.tag {
+  background-color: #007bff;
+  color: white;
+  padding: 2px 6px;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+}
+
+.tag span {
+  margin-left: 5px;
+  cursor: pointer;
+}
+*/
+
+#tagsBtn.empty {
+  background-color: #9ca3af !important;
+  cursor: not-allowed;
+  color: #666;
+}
+
+
+/*Croix pour supp Tags*/
+#tagsMenu li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px 8px;
+}
+
+#tagsMenu .remove-tag {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: red;
+  font-weight: bold;
+}
+
+
+
+/*Modal Description*/
+.description-modal {
+  max-width: 600px;
+}
+
+#descriptionTextarea {
+  width: 100%;
+  resize: vertical;
+  padding: 10px;
+  font-size: 14px;
+  line-height: 1.4;
+  box-sizing: border-box;
 }
