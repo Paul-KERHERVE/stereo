@@ -389,5 +389,28 @@
     "collection": "Xq",
     "stockage": "xQ",
     "diffusion": "interne"
+  },
+  {
+    "id": 28,
+    "nom": "sans titre-34.jpg",
+    "tags": [
+      "cqs"
+    ],
+    "auteur": "vsd",
+    "date": " scq",
+    "lieu": "cqs",
+    "titre": "bvsd",
+    "description": "csdc",
+    "support": "plaque de verre",
+    "type": "cqs",
+    "format": "jpg",
+    "largeur": 2000,
+    "hauteur": 1333,
+    "date_entree": "30-01-2026",
+    "etat": "correct",
+    "proprietaire": " ",
+    "collection": " ",
+    "stockage": " ",
+    "diffusion": "interne"
   }
 ]
