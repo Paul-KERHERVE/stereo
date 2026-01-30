@@ -366,5 +366,28 @@
     "collection": "dc",
     "stockage": "dccs",
     "diffusion": "interne"
+  },
+  {
+    "id": 27,
+    "nom": "sans titre-18.jpg",
+    "tags": [
+      ""
+    ],
+    "auteur": "cq",
+    "date": "scqs",
+    "lieu": "xs<",
+    "titre": "bdf",
+    "description": "qxq",
+    "support": "plaque de verre",
+    "type": "C QW",
+    "format": "jpg",
+    "largeur": 2000,
+    "hauteur": 1333,
+    "date_entree": "30-01-2026",
+    "etat": "correct",
+    "proprietaire": "XQS",
+    "collection": "Xq",
+    "stockage": "xQ",
+    "diffusion": "interne"
   }
 ]
