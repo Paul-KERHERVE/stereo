@@ -1,120 +1,5 @@
 [
   {
-    "id": 5,
-    "nom": "chat.webp",
-    "tags": [
-      ""
-    ],
-    "auteur": "",
-    "date": "",
-    "lieu": "",
-    "titre": "",
-    "description": "",
-    "support": "plaque de verre",
-    "type": "",
-    "format": "webp",
-    "largeur": 0,
-    "hauteur": 0,
-    "date_entree": "28-01-2026",
-    "etat": "correct",
-    "proprietaire": "",
-    "collection": "",
-    "stockage": "",
-    "diffusion": "interne"
-  },
-  {
-    "id": 6,
-    "nom": "pouce.webp",
-    "tags": [
-      ""
-    ],
-    "auteur": "",
-    "date": "",
-    "lieu": "",
-    "titre": "",
-    "description": "",
-    "support": "plaque de verre",
-    "type": "",
-    "format": "webp",
-    "largeur": 0,
-    "hauteur": 0,
-    "date_entree": "28-01-2026",
-    "etat": "correct",
-    "proprietaire": "",
-    "collection": "",
-    "stockage": "",
-    "diffusion": "interne"
-  },
-  {
-    "id": 7,
-    "nom": "pouce.webp",
-    "tags": [
-      ""
-    ],
-    "auteur": "",
-    "date": "",
-    "lieu": "",
-    "titre": "",
-    "description": "",
-    "support": "plaque de verre",
-    "type": "",
-    "format": "webp",
-    "largeur": 0,
-    "hauteur": 0,
-    "date_entree": "28-01-2026",
-    "etat": "correct",
-    "proprietaire": "",
-    "collection": "",
-    "stockage": "",
-    "diffusion": "interne"
-  },
-  {
-    "id": 8,
-    "nom": "pouce.webp",
-    "tags": [
-      ""
-    ],
-    "auteur": "",
-    "date": "",
-    "lieu": "",
-    "titre": "",
-    "description": "",
-    "support": "plaque de verre",
-    "type": "",
-    "format": "webp",
-    "largeur": 0,
-    "hauteur": 0,
-    "date_entree": "28-01-2026",
-    "etat": "correct",
-    "proprietaire": "",
-    "collection": "",
-    "stockage": "",
-    "diffusion": "interne"
-  },
-  {
-    "id": 9,
-    "nom": "pouce.webp",
-    "tags": [
-      ""
-    ],
-    "auteur": "",
-    "date": "",
-    "lieu": "",
-    "titre": "",
-    "description": "",
-    "support": "plaque de verre",
-    "type": "",
-    "format": "webp",
-    "largeur": 0,
-    "hauteur": 0,
-    "date_entree": "28-01-2026",
-    "etat": "correct",
-    "proprietaire": "",
-    "collection": "",
-    "stockage": "",
-    "diffusion": "interne"
-  },
-  {
     "id": 10,
     "nom": "chat.webp",
     "tags": [
@@ -457,6 +342,29 @@
     "proprietaire": "c",
     "collection": "c",
     "stockage": "c",
+    "diffusion": "interne"
+  },
+  {
+    "id": 26,
+    "nom": "sans titre-24.jpg",
+    "tags": [
+      "qc"
+    ],
+    "auteur": "vdf s",
+    "date": "vcsd",
+    "lieu": "csd",
+    "titre": "bvds",
+    "description": "vfd",
+    "support": "plaque de verre",
+    "type": "dcqs",
+    "format": "jpg",
+    "largeur": 1333,
+    "hauteur": 2000,
+    "date_entree": "30-01-2026",
+    "etat": "correct",
+    "proprietaire": "vf",
+    "collection": "dc",
+    "stockage": "dccs",
     "diffusion": "interne"
   }
 ]
