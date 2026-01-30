@@ -458,5 +458,28 @@
     "collection": "",
     "stockage": "",
     "diffusion": "interne"
+  },
+  {
+    "id": 31,
+    "nom": "image_40.jpg",
+    "tags": [
+      ""
+    ],
+    "auteur": "",
+    "date": "",
+    "lieu": "",
+    "titre": "",
+    "description": "",
+    "support": "plaque de verre",
+    "type": "",
+    "format": "jpg",
+    "largeur": 2000,
+    "hauteur": 1334,
+    "date_entree": "31-01-2026",
+    "etat": "correct",
+    "proprietaire": "",
+    "collection": "",
+    "stockage": "",
+    "diffusion": "interne"
   }
 ]
