@@ -14,7 +14,7 @@ export default async function handler(req, res) {
     JSON.stringify(json, null, 2)
   ).toString("base64");
 
-  const url = `https://api.github.com/repos/${process.env.GITHUB_OWNER}/${process.env.GITHUB_REPO}/contents/${process.env.JSON_PATH}`;
+  const url = "https://api.github.com/repos/Paul-KERHERVE/stereo/contents/images.json";
 
   // récupérer le SHA actuel de images.json
   const current = await fetch(url, {
