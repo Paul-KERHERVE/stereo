@@ -8,7 +8,7 @@ export default async function handler(req, res) {
   const { filename, folder, base64 } = req.body;
 
   const content = base64; // déjà en base64
-  const path = `public/photos/${folder}/${filename}`;
+  const path = `images/${folder}/${filename}`;
 
   const url = `https://api.github.com/repos/Paul-KERHERVE/stereo/contents/${path}`;
 
