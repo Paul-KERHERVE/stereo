@@ -199,7 +199,7 @@ function openPreview(img) {
   const stereoImg = document.getElementById("stereoImg");
 
   const baseName = img.nom.replace(/\.[^/.]+$/, "");
-  stereoImg.src = "images/" + baseName + "." + img.format; // version originale
+  stereoImg.src = "images/original/" + baseName + "." + img.format; // version originale
   stereoModal.style.display = "flex";
   };
 
