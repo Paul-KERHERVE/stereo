@@ -294,23 +294,23 @@
     "id": 48,
     "nom": "Earth_-_3D_Anaglyph.png",
     "tags": [
-      "globe"
+      ""
     ],
-    "auteur": "Paul",
-    "date": "2026",
-    "lieu": "Paris",
-    "titre": "Monde",
-    "description": "Globe terrestre. ",
-    "support": "numérique",
-    "type": "Anaglyphe",
+    "auteur": "",
+    "date": "",
+    "lieu": "",
+    "titre": "",
+    "description": "",
+    "support": "plaque de verre",
+    "type": "",
     "format": "png",
     "largeur": 1092,
     "hauteur": 1092,
     "date_entree": "03-02-2026",
-    "etat": "parfait",
-    "proprietaire": "Paul Kerhervé",
-    "collection": "Cartes",
-    "stockage": "Asnières-sur-Seine",
-    "diffusion": "externe"
+    "etat": "correct",
+    "proprietaire": "",
+    "collection": "",
+    "stockage": "",
+    "diffusion": "interne"
   }
 ]
