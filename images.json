@@ -312,5 +312,28 @@
     "collection": "",
     "stockage": "",
     "diffusion": "interne"
+  },
+  {
+    "id": 49,
+    "nom": "Earth_-_3D_Anaglyph.png",
+    "tags": [
+      ""
+    ],
+    "auteur": "",
+    "date": "",
+    "lieu": "",
+    "titre": "",
+    "description": "",
+    "support": "plaque de verre",
+    "type": "",
+    "format": "png",
+    "largeur": 1092,
+    "hauteur": 1092,
+    "date_entree": "03-02-2026",
+    "etat": "correct",
+    "proprietaire": "",
+    "collection": "",
+    "stockage": "",
+    "diffusion": "interne"
   }
 ]
