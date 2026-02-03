@@ -217,5 +217,29 @@
     "collection": "Libération de Paris",
     "stockage": "Médiathèque du patrimoine",
     "diffusion": "interne"
+  },
+  {
+    "id": 45,
+    "nom": "10.png",
+    "tags": [
+      "camion",
+      "politique"
+    ],
+    "auteur": "Marcel Lecoufle",
+    "date": "1944",
+    "lieu": "Paris",
+    "titre": "Le Sénat",
+    "description": "Vue du Sénat et de ses murs endommagés. Des camions militaires américains passent devant au premier plan.",
+    "support": "plaque de verre",
+    "type": "anaglyphe",
+    "format": "png",
+    "largeur": 2880,
+    "hauteur": 1568,
+    "date_entree": "03-02-2026",
+    "etat": "correct",
+    "proprietaire": "StéréoClub",
+    "collection": "Libération de Paris",
+    "stockage": "Médiathèque du patrimoine",
+    "diffusion": "interne"
   }
 ]
