@@ -1,97 +1,5 @@
 [
   {
-    "id": 32,
-    "nom": "image_07.jpg",
-    "tags": [
-      ""
-    ],
-    "auteur": "",
-    "date": "",
-    "lieu": "",
-    "titre": "",
-    "description": "",
-    "support": "plaque de verre",
-    "type": "",
-    "format": "jpg",
-    "largeur": 2000,
-    "hauteur": 1334,
-    "date_entree": "31-01-2026",
-    "etat": "correct",
-    "proprietaire": "",
-    "collection": "",
-    "stockage": "",
-    "diffusion": "interne"
-  },
-  {
-    "id": 33,
-    "nom": "image_08.jpg",
-    "tags": [
-      ""
-    ],
-    "auteur": "llllllllllll",
-    "date": "gggggggggggggggg",
-    "lieu": "sssssssssssss",
-    "titre": "hhhhhhhhhhhhhhhhhhhhhhhh",
-    "description": "",
-    "support": "plaque de verre",
-    "type": "",
-    "format": "jpg",
-    "largeur": 2000,
-    "hauteur": 1334,
-    "date_entree": "31-01-2026",
-    "etat": "correct",
-    "proprietaire": "",
-    "collection": "",
-    "stockage": "",
-    "diffusion": "interne"
-  },
-  {
-    "id": 34,
-    "nom": "image_09.jpg",
-    "tags": [
-      ""
-    ],
-    "auteur": "",
-    "date": "",
-    "lieu": "",
-    "titre": "démo Yves",
-    "description": "",
-    "support": "plaque de verre",
-    "type": "",
-    "format": "jpg",
-    "largeur": 2000,
-    "hauteur": 1334,
-    "date_entree": "31-01-2026",
-    "etat": "correct",
-    "proprietaire": "",
-    "collection": "",
-    "stockage": "",
-    "diffusion": "interne"
-  },
-  {
-    "id": 35,
-    "nom": "image_04.jpg",
-    "tags": [
-      ""
-    ],
-    "auteur": "",
-    "date": "",
-    "lieu": "",
-    "titre": "",
-    "description": "",
-    "support": "plaque de verre",
-    "type": "",
-    "format": "jpg",
-    "largeur": 2000,
-    "hauteur": 1334,
-    "date_entree": "03-02-2026",
-    "etat": "correct",
-    "proprietaire": "",
-    "collection": "",
-    "stockage": "",
-    "diffusion": "interne"
-  },
-  {
     "id": 36,
     "nom": "1.png",
     "tags": [
@@ -184,6 +92,30 @@
     "hauteur": 1568,
     "date_entree": "03-02-2026",
     "etat": "mauvais",
+    "proprietaire": "StéréoClub",
+    "collection": "Libération de Paris",
+    "stockage": "Médiathèque du patrimoine",
+    "diffusion": "interne"
+  },
+  {
+    "id": 40,
+    "nom": "5.png",
+    "tags": [
+      "soldat",
+      "drapeau"
+    ],
+    "auteur": "Marcel Lecoufle",
+    "date": "1944",
+    "lieu": "Paris",
+    "titre": "Arc de Triomphe",
+    "description": "Soldats américains devant l'Arc de Triomphe.",
+    "support": "plaque de verre",
+    "type": "anaglyphe",
+    "format": "png",
+    "largeur": 2880,
+    "hauteur": 1568,
+    "date_entree": "03-02-2026",
+    "etat": "correct",
     "proprietaire": "StéréoClub",
     "collection": "Libération de Paris",
     "stockage": "Médiathèque du patrimoine",
