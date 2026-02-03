@@ -138,5 +138,30 @@
     "collection": "Libération de Paris",
     "stockage": "Médiathèque du patrimoine",
     "diffusion": "interne"
+  },
+  {
+    "id": 38,
+    "nom": "3.png",
+    "tags": [
+      "pont",
+      "soldat",
+      "camion"
+    ],
+    "auteur": "Marcel Lecoufle",
+    "date": "1944",
+    "lieu": "Paris",
+    "titre": "Pont Saint Michel",
+    "description": "Soldats américains sur le pont Saint Michel",
+    "support": "plaque de verre",
+    "type": "anaglyphe",
+    "format": "png",
+    "largeur": 2880,
+    "hauteur": 1568,
+    "date_entree": "03-02-2026",
+    "etat": "correct",
+    "proprietaire": "StéréoClub",
+    "collection": "Libération de Paris",
+    "stockage": "Médiathèque du patrimoine",
+    "diffusion": "interne"
   }
 ]
