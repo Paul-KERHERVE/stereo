@@ -163,5 +163,30 @@
     "collection": "Libération de Paris",
     "stockage": "Médiathèque du patrimoine",
     "diffusion": "interne"
+  },
+  {
+    "id": 39,
+    "nom": "4.png",
+    "tags": [
+      "nature",
+      "camion",
+      "neige"
+    ],
+    "auteur": "Marcel Lecoufle",
+    "date": "1944",
+    "lieu": "Paris",
+    "titre": "Foret de Fontainebleau",
+    "description": "Camion dans la neige de la foret de Fontainebleau",
+    "support": "plaque de verre",
+    "type": "anaglyphe",
+    "format": "png",
+    "largeur": 2880,
+    "hauteur": 1568,
+    "date_entree": "03-02-2026",
+    "etat": "mauvais",
+    "proprietaire": "StéréoClub",
+    "collection": "Libération de Paris",
+    "stockage": "Médiathèque du patrimoine",
+    "diffusion": "interne"
   }
 ]
