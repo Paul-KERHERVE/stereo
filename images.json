@@ -289,5 +289,28 @@
     "collection": "Libération de Paris",
     "stockage": "Médiathèque du patrimoine",
     "diffusion": "interne"
+  },
+  {
+    "id": 48,
+    "nom": "Earth_-_3D_Anaglyph.png",
+    "tags": [
+      "globe"
+    ],
+    "auteur": "Paul",
+    "date": "2026",
+    "lieu": "Paris",
+    "titre": "Monde",
+    "description": "Globe terrestre",
+    "support": "numérique",
+    "type": "anaglyphe",
+    "format": "png",
+    "largeur": 1092,
+    "hauteur": 1092,
+    "date_entree": "03-02-2026",
+    "etat": "correct",
+    "proprietaire": "Paul Kerhervé",
+    "collection": "Paysages",
+    "stockage": "Asnières",
+    "diffusion": "externe"
   }
 ]
