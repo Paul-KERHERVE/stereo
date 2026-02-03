@@ -265,5 +265,29 @@
     "collection": "Libération de Paris",
     "stockage": "Médiathèque du patrimoine",
     "diffusion": "interne"
+  },
+  {
+    "id": 47,
+    "nom": "12.png",
+    "tags": [
+      "char",
+      "maison"
+    ],
+    "auteur": "Marcel Lecoufle ",
+    "date": "1944",
+    "lieu": "Boissy",
+    "titre": "Regroupement devant un char américain",
+    "description": "Regroupement de curieux devant un très gros char américain.",
+    "support": "plaque de verre",
+    "type": "anaglyphe",
+    "format": "png",
+    "largeur": 2880,
+    "hauteur": 1568,
+    "date_entree": "03-02-2026",
+    "etat": "correct",
+    "proprietaire": "StéréoClub",
+    "collection": "Libération de Paris",
+    "stockage": "Médiathèque du patrimoine",
+    "diffusion": "interne"
   }
 ]
