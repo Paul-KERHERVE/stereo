@@ -168,5 +168,29 @@
     "collection": "Libération de Paris",
     "stockage": "Avenue des champs Elysées",
     "diffusion": "interne"
+  },
+  {
+    "id": 43,
+    "nom": "8.png",
+    "tags": [
+      "arc de triomphe",
+      ""
+    ],
+    "auteur": "Marcel Lecoufle",
+    "date": "1943",
+    "lieu": "Paris",
+    "titre": "Neige place de l'Etoile",
+    "description": "Neige place de l'Etoile avec vue sur l'arc de triomphe",
+    "support": "plaque de verre",
+    "type": "anaglyphe",
+    "format": "png",
+    "largeur": 2880,
+    "hauteur": 1568,
+    "date_entree": "03-02-2026",
+    "etat": "correct",
+    "proprietaire": "StéréoClub",
+    "collection": "Libération de Paris",
+    "stockage": "Médiathèque du patrimoine",
+    "diffusion": "interne"
   }
 ]
