@@ -241,5 +241,29 @@
     "collection": "Libération de Paris",
     "stockage": "Médiathèque du patrimoine",
     "diffusion": "interne"
+  },
+  {
+    "id": 46,
+    "nom": "11.png",
+    "tags": [
+      "jeep",
+      "arc de triomphe"
+    ],
+    "auteur": "Marcel Lecoufle",
+    "date": "1944",
+    "lieu": "Paris",
+    "titre": "Enfant devant les Champs Elysées",
+    "description": "Portrait de la fille du photographe avec l'arc de Triomphe en arrière plan.",
+    "support": "plaque de verre",
+    "type": "anaglyphe",
+    "format": "png",
+    "largeur": 2880,
+    "hauteur": 1568,
+    "date_entree": "03-02-2026",
+    "etat": "correct",
+    "proprietaire": "StéréoClub",
+    "collection": "Libération de Paris",
+    "stockage": "Médiathèque du patrimoine",
+    "diffusion": "interne"
   }
 ]
